@@ -263,7 +263,7 @@ void MyMCP23S17::setPort(uint8_t portLevel, mcp_port port, bool useTransaction){
     }
 }
 
-void MyMCP23S17::setPort(uint8_t portLevelA, uint8_t portLevelB, bool useTransaction){
+void MyMCP23S17::setPorts(uint8_t portLevelA, uint8_t portLevelB, bool useTransaction){
     gpioA = portLevelA;
     gpioB = portLevelB;
     write(GPIOA, gpioA, gpioB, useTransaction);
