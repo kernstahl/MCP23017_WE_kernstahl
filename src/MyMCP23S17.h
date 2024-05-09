@@ -104,7 +104,7 @@ class MyMCP23S17{
         void setPorts(uint8_t portLevelA, uint8_t portLevelB, bool useTransaction = true); 
 
         void setPortsBatch(uint8_t portLevelA, uint8_t portLevelB) {
-            setPort(portLevelA, portLevelB, false);
+            setPorts(portLevelA, portLevelB, false);
         }
 
         void setPortX(uint8_t, uint8_t, mcp_port); 
