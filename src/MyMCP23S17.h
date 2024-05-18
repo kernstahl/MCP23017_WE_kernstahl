@@ -75,6 +75,21 @@ class MyMCP23S17{
         void setPortMode(uint8_t, mcp_port);
         void setPortMode(uint8_t val, mcp_port, uint8_t pu);
 
+        void setAllPinsAsOutput() {
+            setPortMode(255, mcp_port::A);
+            setPortMode(255, mcp_port::B);
+        }
+
+        void setAllPinsAsInput() {
+            setPortMode(0, mcp_port::A);
+            setPortMode(0, mcp_port::B);
+        }
+
+        void setAllPinsAsInputPullup() {
+            setPortMode(0, mcp_port::A, INPUT_PULLUP);
+            setPortMode(0, mcp_port::B, INPUT_PULLUP);
+        }
+
         void setPin(uint8_t pin, mcp_port port, uint8_t pinLevel, bool useTransaction = true);
 
         void setPinBatch(uint8_t pin, mcp_port port, uint8_t pinLevel) {
